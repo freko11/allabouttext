@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!--
+	Highlights by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Book Genre Classifier</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/classifier/assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header class="major">
+					<h1>Book Genre Classifier</h1>
+					<br>
+					<p>A classification model trained using the <a href="https://www.cs.cmu.edu/~dbamman/booksummaries.html#:~:text=This%20dataset%20contains%20plot%20summaries,Creative%20Commons%20Attribution%2DShareAlike%20License.">CMU Book Summary Dataset</a>. </p>
+				</header>
+				<div class="container">
+					<ul class="actions special">
+						<li><a href="#one" class="button primary scrolly">Let's Start</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="static/classifier/images/pic01.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>How to use</h2>
+						</header>
+						<p>Enter a book summary and let us do the rest!</p>
+						<form id="form1" action="{{ url_for('book_classifier') }}" method = "post">
+							<textarea id="myInput" name="text" rows="4" cols="50" form="form1" placeholder="Enter book summary here."></textarea>
+						</form>
+						<button method="post" type="submit" form="form1" value="Submit" >Predict</button>
+						<br><br>
+						<button onclick="document.getElementById('myInput').value = ''">Clear input field</button>
+						<br><br><br><br>
+						{%if showresult%}
+						<header class="major">
+						<h2>Predicted book genre(s) are.....</h2>
+						</header>
+						<p>{{ genre }}</p>
+						{%endif%}
+					</div>
+
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="static/classifier/assets/js/jquery.min.js"></script>
+			<script src="static/classifier/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/classifier/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/classifier/assets/js/browser.min.js"></script>
+			<script src="static/classifier/assets/js/breakpoints.min.js"></script>
+			<script src="static/classifier/assets/js/util.js"></script>
+			<script src="static/classifier/assets/js/main.js"></script>
+
+	</body>
+</html>

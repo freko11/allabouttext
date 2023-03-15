@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Book Recommender</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/recommender/assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Book Recommender</a></h1>
+					<p>Yet another<br />
+					NLP model</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#one" class="active">About</a></li>
+						<li><a href="#two">How to use</a></li>
+						{%if showresult%}
+						<li><a href="#three">Recommended Books</a></li>
+						{%endif%}
+					</ul>
+				</nav>
+
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="static/recommender/images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>What am I</h2>
+										<p>A recommender system built on <a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/">Book-Crossing Dataset</a>.</p>
+									</header>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h3>How to use</h3>
+									<p>Enter a book title and we will recommend you something similar!</p>
+									<form id="form2" action="{{ url_for('book_recommender') }}" method = "post">
+										<input type="text" id="Title" name="title" placeholder="Book Title"><br>
+									</form>
+									<button method="post" type="submit" form="form2" value="Submit" class="button">Click for recommendations!</button>
+								</div>
+							</section>
+
+						<!-- Three -->
+						{%if showresult%}
+
+							<section id="three">
+								<div class="container">
+									<h3>Your recommended books are.....</h3><br>
+									<div class="features">
+										<article>
+											<a href="#" class="image"><img src="static/recommender/images/pic01.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>{{ titles[0] }}</h4>
+												<ul>
+													<li>ISBN: {{ isbn[0] }}</li>
+													<li>Author: {{ author[0] }}</li>
+													<li>Year Published: {{ year[0] }}</li>
+													<li>Publisher: {{ publisher[0] }}</li>
+												</ul>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="static/recommender/images/pic02.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>{{ titles[1] }}</h4>
+												<ul>
+													<li>ISBN: {{ isbn[1] }}</li>
+													<li>Author: {{ author[1] }}</li>
+													<li>Year Published: {{ year[1] }}</li>
+													<li>Publisher: {{ publisher[1] }}</li>
+												</ul>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="static/recommender/images/pic03.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>{{ titles[2] }}</h4>
+												<ul>
+													<li>ISBN: {{ isbn[2] }}</li>
+													<li>Author: {{ author[2] }}</li>
+													<li>Year Published: {{ year[2] }}</li>
+													<li>Publisher: {{ publisher[2] }}</li>
+												</ul>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+						{%endif%}
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/recommender/assets/js/jquery.min.js"></script>
+			<script src="static/recommender/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/recommender/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/recommender/assets/js/browser.min.js"></script>
+			<script src="static/recommender/assets/js/breakpoints.min.js"></script>
+			<script src="static/recommender/assets/js/util.js"></script>
+			<script src="static/recommender/assets/js/main.js"></script>
+
+	</body>
+</html>
