@@ -13,6 +13,8 @@ import neattext.functions as ntfx
 import numpy as np
 import pandas as pd
 
+nltk.download('wordnet')
+
 def textcleaning(text):
     text = re.sub("'\'","", text)
     text = re.sub("[^a-zA-Z]", " ", text)
