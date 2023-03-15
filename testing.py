@@ -13,8 +13,6 @@ import neattext.functions as ntfx
 import numpy as np
 import pandas as pd
 
-nltk.download('wordnet')
-
 def textcleaning(text):
     text = re.sub("'\'","", text)
     text = re.sub("[^a-zA-Z]", " ", text)
@@ -106,11 +104,13 @@ def book_classifier():
     if request.method == 'POST':
         values = request.form['text']
         predicted = predict(values)
-        if len(predicted[0]) == 0:
-            result = 'Sorry, we are unable to predict which genre your book belongs to'
-            return render_template('classifier.html', genre=result)
-        else:
+
+        if len(predicted[0]) != 0:
             return render_template('classifier.html', showresult=True, genre=predicted[0])
+        else:
+            result = 'Sorry, we are unable to predict which genre your book belongs to'
+            return render_template('classifier.html', showresult=True, genre=result)
+
     return render_template('classifier.html')
 
 
@@ -152,4 +152,4 @@ def book_recommender():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
