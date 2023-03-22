@@ -13,8 +13,6 @@ import neattext.functions as ntfx
 import numpy as np
 import pandas as pd
 
-nltk.download('wordnet')
-
 def textcleaning(text):
     text = re.sub("'\'","", text)
     text = re.sub("[^a-zA-Z]", " ", text)
@@ -148,10 +146,11 @@ def book_recommender():
         year = [final_list[i][4] for i in range(len(final_list))]
         publisher = [final_list[i][5] for i in range(len(final_list))]
         first = titles[0]
+        image = [final_list[i][6] for i in range(len(final_list))]
 
-        return render_template('recommender.html', showresult=True, titles=titles, isbn=isbn, author=author, year=year, publisher=publisher)
+        return render_template('recommender.html', showresult=True, titles=titles, isbn=isbn, author=author, year=year, publisher=publisher, image=image)
     return render_template('recommender.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

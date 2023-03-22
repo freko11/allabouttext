@@ -16,7 +16,6 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Book Recommender</a></h1>
 					<p>Yet another<br />
 					NLP model</p>
@@ -42,7 +41,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="static/recommender/images/banner.jpg" alt="" />
+									<img src="static/recommender/images/books1.jpg" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -72,7 +71,7 @@
 									<h3>Your recommended books are.....</h3><br>
 									<div class="features">
 										<article>
-											<a href="#" class="image"><img src="static/recommender/images/pic01.jpg" alt="" /></a>
+											<a href="{{ image[0] }}" target="_blank" class="image"><img src="{{ image[0] }}" alt="Book Picture" width="500" height="500" /></a>
 											<div class="inner">
 												<h4>{{ titles[0] }}</h4>
 												<ul>
@@ -84,7 +83,7 @@
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="static/recommender/images/pic02.jpg" alt="" /></a>
+											<a href="{{ image[1] }}" target="_blank" class="image"><img src="{{ image[1] }}" alt="Book Picture" width="500" height="500"/></a>
 											<div class="inner">
 												<h4>{{ titles[1] }}</h4>
 												<ul>
@@ -96,7 +95,7 @@
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="static/recommender/images/pic03.jpg" alt="" /></a>
+											<a href="{{ image[2] }}" target="_blank" class="image"><img src="{{ image[2] }}" alt="Book Picture" width="500" height="500" /></a>
 											<div class="inner">
 												<h4>{{ titles[2] }}</h4>
 												<ul>
@@ -115,6 +114,8 @@
 
 
 					</div>
+
+
 
 			</div>
 
