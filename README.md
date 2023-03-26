@@ -4,10 +4,13 @@ A multi-label book genre classification model trained on [CMU Book Summary Datas
 
 
 
-
 ## Credits
 
 This work includes website templates from [HTML5 UP](https://html5up.net/) developed by [ajlkn](https://twitter.com/ajlkn).
+
+Picture by [Susan Q Yin](https://unsplash.com/@syinq) on [Unsplash](https://unsplash.com/images/things/book?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+
+Picture by [Henry Be](https://unsplash.com/@henry_be) on [Unsplash](https://unsplash.com/images/things/book?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
 ## License
 
